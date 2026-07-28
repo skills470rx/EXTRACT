@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>PowerExtract v2</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<video autoplay muted loop playsinline id="bgVideo">
+
+<source src="video.mp4" type="video/mp4">
+
+</video>
+
+<div class="overlay"></div>
+
+<header>
+
+<div class="logo">
+
+PowerExtract
+
+</div>
+
+<button class="menu">
+
+☰
+
+</button>
+
+</header>
+
+<section class="hero">
+
+<div class="glass">
+
+<div class="badge">
+
+Website Analyzer
+
+</div>
+
+<h1>
+
+POWER
+
+<span>EXTRACT</span>
+
+</h1>
+
+<p>
+
+Analyze any website from one URL
+
+</p>
+
+<div class="search">
+
+<input
+
+id="url"
+
+type="text"
+
+placeholder="https://example.com"
+
+>
+
+<button id="analyze">
+
+Analyze
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="summary">
+
+<div class="card">
+
+<h3>Images</h3>
+
+<span id="imageCount">0</span>
+
+</div>
+
+<div class="card">
+
+<h3>CSS</h3>
+
+<span id="cssCount">0</span>
+
+</div>
+
+<div class="card">
+
+<h3>JavaScript</h3>
+
+<span id="jsCount">0</span>
+
+</div>
+
+<div class="card">
+
+<h3>Links</h3>
+
+<span id="linkCount">0</span>
+
+</div>
+
+</section>
+
+<section class="grid">
+
+<div class="glass panel">
+
+<h2>
+
+HTML
+
+</h2>
+
+<button id="downloadHtml">
+
+Download
+
+</button>
+
+<textarea
+
+id="htmlBox">
+
+</textarea>
+
+</div>
+
+<div class="glass panel">
+
+<h2>
+
+Images
+
+</h2>
+
+<div
+
+id="images"
+
+class="list">
+
+</div>
+
+</div>
+
+<div class="glass panel">
+
+<h2>
+
+CSS
+
+</h2>
+
+<div
+
+id="css"
+
+class="list">
+
+</div>
+
+</div>
+
+<div class="glass panel">
+
+<h2>
+
+JavaScript
+
+</h2>
+
+<div
+
+id="javascript"
+
+class="list">
+
+</div>
+
+</div>
+
+<div class="glass panel">
+
+<h2>
+
+Videos
+
+</h2>
+
+<div
+
+id="videos"
+
+class="list">
+
+</div>
+
+</div>
+
+<div class="glass panel">
+
+<h2>
+
+Fonts
+
+</h2>
+
+<div
+
+id="fonts"
+
+class="list">
+
+</div>
+
+</div>
+
+<div class="glass panel">
+
+<h2>
+
+Links
+
+</h2>
+
+<div
+
+id="links"
+
+class="list">
+
+</div>
+
+</div>
+
+<div class="glass panel">
+
+<h2>
+
+Meta
+
+</h2>
+
+<div
+
+id="meta"
+
+class="list">
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+PowerExtract v2
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
