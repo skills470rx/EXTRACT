@@ -1,6 +1,5 @@
 /*========================================
  POWER EXTRACT V2
- Part 1
 ========================================*/
 
 /*========================================
@@ -53,27 +52,7 @@ urlInput.addEventListener("keydown", (event) => {
 });
 
 
-downloadHtml.addEventListener("click", () => {
-
-    if (!htmlSource) {
-
-        alert("ไม่มี HTML");
-
-        return;
-
-    }
-
-    downloadFile(
-
-        "index.html",
-
-        htmlSource,
-
-        "text/html"
-
-    );
-
-});
+downloadHtml.addEventListener("click", exportHTML);
 
 
 /*========================================
@@ -157,11 +136,13 @@ async function fetchHTML() {
 
         hideLoading();
 
-        htmlBox.value =
+        showError(
 
             "Error\n\n" +
 
-            error.message;
+            error.message
+
+        );
 
     }
 
@@ -176,19 +157,7 @@ function clearResult() {
 
     htmlBox.value = "";
 
-    imagesBox.innerHTML = "";
-
-    cssBox.innerHTML = "";
-
-    jsBox.innerHTML = "";
-
-    videosBox.innerHTML = "";
-
-    fontsBox.innerHTML = "";
-
-    linksBox.innerHTML = "";
-
-    metaBox.innerHTML = "";
+    clearLists();
 
     imageCount.textContent = 0;
 
@@ -211,7 +180,15 @@ function showLoading() {
 
     analyzeBtn.innerHTML =
 
-    "Analyzing...";
+    "<div class=\"loading\">" +
+
+    "<span></span>" +
+
+    "<span></span>" +
+
+    "<span></span>" +
+
+    "</div>";
 
 }
 
@@ -220,11 +197,10 @@ function hideLoading() {
 
     analyzeBtn.disabled = false;
 
-    analyzeBtn.innerHTML =
-
-    "Analyze";
+    analyzeBtn.innerHTML = "Analyze";
 
 }
+
 
 /*========================================
  PART 2
@@ -464,26 +440,6 @@ function analyzeHTML(html, website) {
         );
 
     /*==============================
-      UPDATE COUNTER
-    ==============================*/
-
-    imageCount.textContent =
-
-        images.length;
-
-    cssCount.textContent =
-
-        css.length;
-
-    jsCount.textContent =
-
-        javascript.length;
-
-    linkCount.textContent =
-
-        links.length;
-
-    /*==============================
       SEND TO PART 3
     ==============================*/
 
@@ -502,6 +458,7 @@ function analyzeHTML(html, website) {
     renderMeta(meta);
 
 }
+
 
 /*========================================
  PART 3
@@ -753,7 +710,7 @@ function exportJSON(name,data){
 
 
 /*========================================
-SUMMARY
+ SUMMARY
 ========================================*/
 
 function updateSummary(result){
@@ -767,6 +724,7 @@ function updateSummary(result){
     linkCount.textContent=result.links.length;
 
 }
+
 
 /*========================================
  PART 4
@@ -814,39 +772,6 @@ document.querySelectorAll(
     });
 
 });
-
-
-/*========================================
- LOADING
-========================================*/
-
-function showLoading(){
-
-    analyzeBtn.disabled=true;
-
-    analyzeBtn.innerHTML=`
-
-<div class="loading">
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-</div>
-
-`;
-
-}
-
-function hideLoading(){
-
-    analyzeBtn.disabled=false;
-
-    analyzeBtn.innerHTML="Analyze";
-
-}
 
 
 /*========================================
